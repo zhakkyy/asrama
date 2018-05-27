@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selamat Datang</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href='css/materialize.css'>
+  <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+  .parallax-container {
+      height: 700px;
+    }
+
+    h1{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 30px;
+    }
+
+    .navbar-fixed{
+    @extend .blue, .lighten-4;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src='js/materialize.min.js'></script>
+
+  <!--Menu-->
+  <div class="navbar-fixed ">
+    <nav class=" red darken-3">
+      <div class="nav-wrapper container">
+        <img src="images/headericon.png">
+        <a href="#" data-activates="mobile-menu" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down"> <!--Menu Normal-->
+          <li class="active"><a href="#">Menu</a></li>
+          <li><a href="user_login.php">Login</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-menu"> <!--Side Nav untuk Mobile-->
+          <li class="active"><a href="#">Menu</a></li>
+          <li><a href="#">Login</a></li>
+          <script>
+             $(".button-collapse").sideNav();
+          </script>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <!--Background
+  <div class="parallax-container">
+      <div class="parallax"><img src="images/3007asrama.jpg" class="responsive-img"></div>
+  </div>-->
+
+  <!--Script untuk Background
+  <script>
+  $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+  </script>-->
+
+  <div class="vc_empty_space" style="height: 30px"><span class="vc_empty_space_inner"></span></div> <!--Untuk space-->
+
+  <!--Tutorial-->
+  <h3 class="center">Cara Mendapatkan Kamar Asrama</h3>
+  <p class="center">Jangan ragu untuk masuk Asrama Universitas Telkom, ikuti langkah-langkah di bawah ini!</p>
+  <div class="vc_empty_space" style="height: 15px"><span class="vc_empty_space_inner"></span></div> <!--Untuk space-->
+  <!--Card Tutorial-->
+  <div class="row container">
+    <div class="col s4">
+      <div class="card-panel white">
+        <span>
+        <div class="row center">
+          <img src="images/login.png">
+        </div>
+        <div class="row">
+          <h5 class="center">Login</h5>
+          <p class="center">Login dengan menggunakan nomor peserta dan password yang terdapat pada surat kelulusan yaaaaaaaaaaaaaaaaaaaaaaa.</p>
+        </div>
+        </span>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="card-panel white">
+        <span>
+        <div class="row center">
+          <img src="images/formulir.png">
+        </div>
+        <div class="row">
+          <h5 class="center">Isi Form</h5>
+          <p class="center">Mengisi form secara teliti dan benar agar dapat teman kamar yang sesuai dengan kepribadianmu yaaaaaaaaaaaaaaaaaaaaa.</p>
+        </div>
+        </span>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="card-panel white waves-effect waves-red">
+      <span>
+      <div class="row center">
+        <img src="images/roomnumber.png">
+      </div>
+      <div class="row">
+        <h5 class="center">Nomor Kamar</h5>
+        <p class="center">Setelah mengisi form kalian akan langsung mendapatkan nomor kamar asrama dan mengetahui data diri teman sekamarmu.</p>
+      </div>
+      </span>
+      </div>
+    </div>
+  </div>
+
+  <!--Penjelasan Asrama-->
+  <div class="row container">
+    <h3 class="center">Tentang Asrama Telkom University</h3>
+    <p class="center">Dengan maksud melengkapi program belajar mengajar di Telkom University, Telkom Foundation memberlakukan kebijakan dengan menyediakan asrama bagi mahasiswa/i baru untuk tempat tinggal selama 1 (satu) tahun pertama. Dalam kehidupan asrama diberikan pembinaan dasar-dasar kepribadian guna pembentukan karakter bagi mahasiswa/i baru yang didasarkan pada semangat kebersamaan, nasionalisme, iman, dan taqwa.</p>
+    <p class="center">src: http://dormitory.telkomuniversity.ac.id/sekilas-asrama/</p>
+  </div>
+  <!--Image Slider-->
+  <h3 class="center">Sekilas Asrama</h3>
+
+
+<!--Footer-->
+  <footer class="red darken-3">
+    <div class="layout">
+      <ul class="footer-links">
+        <li>
+          <a href="https://igracias.telkomuniversity.ac.id/admission/index.php" style="color:white;">Admission</a>
+        </li>
+      </ul>
+      <div class="social-links-wrapper">
+        <ul class="social-links">
+            <a href="https://www.facebook.com/groups/dormitorytelkom" target="_blank"><img src="images/icon-facebook.png" width="30px" height="30px"></a>
+            <a href="https://www.instagram.com/telkomdormitory/" target="_blank"><img src="images/icon-instagram.png" width="30px" height="30px"></a>
+            <a href="https://twitter.com/telkomdormitory" target="_blank"><img src="images/icon-twitter.png" width="30px" height="30px"></a>
+            <a href="mailto:dormitory@telkomuniversity.ac.id" target="_blank"><img src="images/icon-email.png" width="30px" height="30px"></a>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
