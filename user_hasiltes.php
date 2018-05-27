@@ -5,15 +5,6 @@
     $_SESSION['username'];
     $id_penghuni=$_SESSION['id_penghuni'];
 
-    // $qry1="SELECT * FROM tbpenghuni WHERE username ='".$_SESSION['username']."' ";
-    // $result1 = mysqli_query($db, $qry1);
-    // $row1 = mysqli_fetch_assoc($result1);
-    // $id_penghuni = $row1['id_penghuni'];
-
-    // $status_login = $_SESSION['status_login'];
-    // if ($status_login == 'test') {
-    //   header("location: ../asrama/user_hasiltes.php");
-    // }
 
     $qry= "SELECT * FROM tbhasiltes WHERE id_penghuni = '$id_penghuni'";
     $result = mysqli_query($db,$qry);
@@ -49,6 +40,15 @@
     // $kekurangan=$row['$kekurangan'];
     // $saran=$row1['$saran'];
 
+    // $qry1="SELECT * FROM tbpenghuni WHERE username ='".$_SESSION['username']."' ";
+    // $result1 = mysqli_query($db, $qry1);
+    // $row1 = mysqli_fetch_assoc($result1);
+    // $id_penghuni = $row1['id_penghuni'];
+
+    // $status_login = $_SESSION['status_login'];
+    // if ($status_login == 'test') {
+    //   header("location: ../asrama/user_hasiltes.php");
+    // }
   ?>
   <html lang="en">
   <head>
@@ -109,138 +109,10 @@
 
         <!--layout-->
         <div class="row">
-          <div class="left-sidebar grey lighten-2"> <!--chart-->
-            <div class="chart" style="padding:0; margin:0;">
+          <div class="left-sidebar grey lighten-2">
+            <div class="chart" style="padding:0; margin:0;"><!--chart-->
               <b style="font-size:23px;">Skor :</b>
-              <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript" scr="https://www.google.com/jsapi"></script>
 
-              <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-
-                  var data = google.visualization.arrayToDataTable([
-                     ['Tipe', 'Extrovert', 'Introvert'],
-                     ['E/I',  <?php echo $totalE; ?>,  <?php echo $totalI; ?>],
-                  ]);
-
-                  var options_fullStacked = {
-                    isStacked: 'percent',
-                    height: 100,
-                    hAxis: {
-                      minValue: 0,
-                      ticks: []
-                    }
-                  };
-
-                  var view = new google.visualization.DataView(data);
-                  view.setColumns([0, 1,
-                                   { calc: "stringify",
-                                     sourceColumn: 1,
-                                     type: "string",
-                                     role: "annotation" },
-                                   2]);
-
-                  var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values"));
-                  chart.draw(view, options_fullStacked);
-              }
-              </script>
-
-
-              <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                     ['Tipe', 'Sensing', 'Intuitive'],
-                     ['S/N',  <?php echo $totalS; ?>,  <?php echo $totalN; ?>],
-
-                  ]);
-
-                  var options_fullStacked = {
-                    isStacked: 'percent',
-                    height: 100,
-                    hAxis: {
-                      minValue: 0,
-                      ticks: []
-                    }
-                  };
-
-                  var view = new google.visualization.DataView(data);
-                  view.setColumns([0, 1,
-                                   { calc: "stringify",
-                                     sourceColumn: 1,
-                                     type: "string",
-                                     role: "annotation" },
-                                   2]);
-
-                  var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values2"));
-                  chart.draw(view, options_fullStacked);
-              }
-              </script>
-
-              <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                     ['Tipe', 'Thinking', 'Feeling'],
-                     ['T/F',  <?php echo $totalT; ?>,  <?php echo $totalF; ?>],
-                  ]);
-
-                  var options_fullStacked = {
-                    isStacked: 'percent',
-                    height: 100,
-                    hAxis: {
-                      minValue: 0,
-                      ticks: []
-                    }
-                  };
-
-                  var view = new google.visualization.DataView(data);
-                  view.setColumns([0, 1,
-                                   { calc: "stringify",
-                                     sourceColumn: 1,
-                                     type: "string",
-                                     role: "annotation" },
-                                   2]);
-
-                  var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values3"));
-                  chart.draw(view, options_fullStacked);
-              }
-              </script>
-
-              <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                     ['Tipe', 'Judging', 'Perceiving'],
-                     ['J/P',  <?php echo $totalJ; ?>,  <?php echo $totalP; ?>],
-                  ]);
-
-                  var options_fullStacked = {
-                    isStacked: 'percent',
-                    height: 100,
-                    hAxis: {
-                      minValue: 0,
-                      ticks: []
-                    }
-                  };
-
-                  var view = new google.visualization.DataView(data);
-                  view.setColumns([0, 1,
-                                   { calc: "stringify",
-                                     sourceColumn: 1,
-                                     type: "string",
-                                     role: "annotation" },
-                                   2]);
-
-                  var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values4"));
-                  chart.draw(view, options_fullStacked);
-              }
-              </script>
 
             </div>
             <div id="stackedchart_values" style="header:none;"></div>
@@ -271,7 +143,7 @@
               </div>
 
 
-              <div class="col s6">
+              <div class="col s6"> <!--button print-->
                 <a href="" target="_blank" onclick="PrintDiv()"><button type="button" class="btn pmd-btn-raised pmd-ripple-effect btn-danger">Cetak Hasil Tes</button></a>
               </div>
 
@@ -318,7 +190,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript"> //script print
       function PrintDiv() {
            var divToPrint = document.getElementById('divtoprint');
            var popupWin = window.open('', '_blank', 'width=766,height=300');
@@ -330,37 +202,134 @@
 
 
     <!--Chart Script-->
-    <script type="text/javascript">
-      var app = {
-      init: function(){
-        this.cacheDOM();
-        this.handleCharts();
-      },
-      cacheDOM: function(){
-        this.$chart = $(".bar-chart");
-      },
-      cssSelectors: {
-        chartBar: "bar-chart--inner"
-      },
-      handleCharts: function(){
-        /*
-          iterate through charts and grab total value
-          then apply that to the width of the inner bar
-        */
-        $.each(this.$chart, function(){
-          var $this = $(this),
-              total = $this.data("total"),
-              $targetBar = $this.find("."+app.cssSelectors.chartBar);
-              $targetBar.css("width","0%"); // zero out for animation
-              setTimeout(function(){
-                $targetBar.css("width",total+"%");
-              },400);
-        });
-      }
-      }
+    <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" scr="https://www.google.com/jsapi"></script>
 
-      app.init();
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+           ['Tipe', 'Extrovert', 'Introvert'],
+           ['E/I',  <?php echo $totalE; ?>,  <?php echo $totalI; ?>],
+        ]);
+
+        var options_fullStacked = {
+          isStacked: 'percent',
+          height: 100,
+          hAxis: {
+            minValue: 0,
+            ticks: []
+          }
+        };
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+
+        var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values"));
+        chart.draw(view, options_fullStacked);
+    }
     </script>
 
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+           ['Tipe', 'Sensing', 'Intuitive'],
+           ['S/N',  <?php echo $totalS; ?>,  <?php echo $totalN; ?>],
+
+        ]);
+
+        var options_fullStacked = {
+          isStacked: 'percent',
+          height: 100,
+          hAxis: {
+            minValue: 0,
+            ticks: []
+          }
+        };
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+
+        var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values2"));
+        chart.draw(view, options_fullStacked);
+    }
+    </script>
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+           ['Tipe', 'Thinking', 'Feeling'],
+           ['T/F',  <?php echo $totalT; ?>,  <?php echo $totalF; ?>],
+        ]);
+
+        var options_fullStacked = {
+          isStacked: 'percent',
+          height: 100,
+          hAxis: {
+            minValue: 0,
+            ticks: []
+          }
+        };
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+
+        var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values3"));
+        chart.draw(view, options_fullStacked);
+    }
+    </script>
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+           ['Tipe', 'Judging', 'Perceiving'],
+           ['J/P',  <?php echo $totalJ; ?>,  <?php echo $totalP; ?>],
+        ]);
+
+        var options_fullStacked = {
+          isStacked: 'percent',
+          height: 100,
+          hAxis: {
+            minValue: 0,
+            ticks: []
+          }
+        };
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+
+        var chart = new google.visualization.BarChart(document.getElementById("stackedchart_values4"));
+        chart.draw(view, options_fullStacked);
+    }
+    </script>
     </body>
   </html>

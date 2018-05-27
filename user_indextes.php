@@ -47,17 +47,6 @@ session_start();
      }
      }
    </script>
-   <script type="text/javascript">
-      function alertHasil(){ //alert lihat hasil tes
-      var msg = confirm("Tes ini hanya dapat dilakukan 1x dan bacalah petunjuknya terlebih dahulu, yakin untuk memulai ?");
-      if(msg==true){
-      window.location="user_hasiltes.php";
-      }
-      else{
-      window.location="user_indextes.php";
-      }
-      }
-    </script>
 
   <div class="navbar-fixed ">
     <nav class=" red darken-3">
@@ -77,14 +66,13 @@ session_start();
     <div class="container">
       <h1 class="header center red-text">Tes Kepribadian MBTI</h1>
 
-      <!-- <div class="row center"> -->
-        <p class="center col s12 light" style="font-size: 19px;">Kenali diri anda lebih jauh</p>
-      <!-- </div> -->
       <?php if(isset($row)){ //cek variabel apakah sudah di set ?>
       <div class="row center"> <!--Button mulai-->
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light teal" onclick="alertHasil();">Lihat Hasil</a>
+        <p class="center col s12 light" style="font-size: 19px;"><i class="material-icons">announcement</i>Anda sudah mengikuti tes kepribadian</p>
+        <a href="user.php" id="download-button" class="btn-large waves-effect waves-light teal" onclick="alertHasil();">Lihat Hasil</a>
       </div>
     <?php }else{ ?>
+      <p class="center col s12 light" style="font-size: 19px;">Kenali diri anda lebih jauh</p>
       <div class="row center"> <!--Button mulai-->
         <a href="#" id="download-button" class="btn-large waves-effect waves-light teal" onclick="alert();">Mulai Kuis</a>
       </div>
