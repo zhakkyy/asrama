@@ -123,11 +123,11 @@ session_start();
         <p><?php echo $row2['keterangan'];?></p>
         <h3>Partner</h3>
         <p><?php echo $row2['partner'];?> dan <?php echo $row2['partner1'];?></p>
-        <h3>Deskripsi</h3>
+        <h3>Saran</h3>
         <p><?php echo $row2['keterangan'];?></p>
-        <h3>Deskripsi</h3>
+        <h3>Kelebihan</h3>
         <p><?php echo $row2['keterangan'];?></p>
-        <h3>Deskripsi</h3>
+        <h3>Kekurangan</h3>
         <p><?php echo $row2['keterangan'];?></p>
       </div>
     </div>
